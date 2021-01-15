@@ -1,0 +1,51 @@
+<body bgcolor= "#ffdcb9">
+    <div align="center">
+<aside style="background-color: #ffdcb9" id="left-panel" class="left-panel">
+    <nav style="background-color: #ffdcb9" class="navbar navbar-expand-sm navbar-default">
+        <div style="background-color: #ffdcb9" id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav" style="background-color: #ffdcb9">
+                <li class="active" style="background-color: #ffdcb9">
+                    <a href="{% url 'dashboard' %}" style="font-family: Arial;color: #cd5c5c"><i class="menu-icon fa fa-laptop"></i>Welcome to heme!</a>
+                </li>
+                <li style="color: #cd5c5c; background-color:#ffdcb9"class="menu-title">Heme Database</li><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" style="color: #cd5c5c" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-paper-plane"></i>Supplier</a>
+                    <ul style="color: #cd5c5c; background-color: #ffdcb9" class="sub-menu children dropdown-menu">
+                        <li><i style="color: #cd5c5c; background-color: #ffdcb9" class="fa fa-th"></i><a style="color: #cd5c5c; background-color: #ffdcb9" href="{% url 'supplier-list' %}">View</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" style="color: #cd5c5c; background-color: #ffdcb9" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Material</a>
+                    <ul style="color: #cd5c5c; background-color: #ffdcb9" class="sub-menu children dropdown-menu">
+                        <li><i style="color: #cd5c5c; background-color: #ffdcb9" class="fa fa-th"></i><a style="color: #cd5c5c; background-color: #ffdcb9" href="{% url 'material-list' %}">View</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown" style="color: #cd5c5c; background-color: #ffdcb9">
+                    <a style="color: #cd5c5c; background-color: #ffdcb9" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-archive"></i>Product</a>
+                    <ul style="color: #cd5c5c; background-color: #ffdcb9" class="sub-menu children dropdown-menu">
+                        <li><i style="color: #cd5c5c; background-color: #ffdcb9" class="fa fa-th"></i><a style="color: #cd5c5c; background-color: #ffdcb9" href="{% url 'product-list' %}">View</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a style="color: #cd5c5c; background-color: #ffdcb9" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-chevron-circle-down"></i>Order</a>
+                    <ul style="color: #cd5c5c; background-color: #ffdcb9"class="sub-menu children dropdown-menu">
+                        <li><i style="color: #cd5c5c; background-color: #ffdcb9"class="fa fa-th"></i><a style="color: #cd5c5c; background-color: #ffdcb9"href="{% url 'order-list' %}">View</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a style="color: #cd5c5c; background-color: #ffdcb9" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-product-hunt"></i>Dealer</a>
+                    <ul style="color: #cd5c5c; background-color: #ffdcb9" class="sub-menu children dropdown-menu">
+                        <li><i style="color: #cd5c5c; background-color: #ffdcb9" class="fa fa-th"></i><a style="color: #cd5c5c; background-color: #ffdcb9" href="{% url 'dealer-list' %}">View</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</aside>
+</div>
+</body>
+</div>

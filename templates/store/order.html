@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ReOrder </title>
+        <meta charset='UTF-8'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body style="background-color: #ffdcb9">
+    <div align="center">
+        <td style="align-items: center">
+        <form name = "filt_id" action="/store/order" method="post" >
+        {% csrf_token %}
+        <select name = "filt_id">
+        {% for c in allproduct %}
+        {{ allproduct  }}
+        <option>{{ c.p_ID }}</option>
+        {% endfor %}
+        </select>
+        <button style="text-align:center;width:110px;height:35px;font-size: 15px;background-color: #cd5c5c;color: #ffffff" type="submit" class="btn btn-warning">ReOrder</button>
+        </form>
+        </td>
+        <div>
+            <h5> Product {{ theid }} EOQ:{{ C_EOQ }} </h5>
+            <h5> inventory: {{ products_in }} </h5>
+            <h5> new inventory: {{ new }} </h5>
+            <h5> 日平均需求: {{ d_demand }} </h5>
+            <h5> 再訂購點: {{ re_point }} </h5>
+
+        </div>
+        <table class='table' border="2px">
+        <thead>
+        <tr>
+                    <th>產品ID</th>
+                    <th>產品名稱</th>
+                    <th>產品價格</th>
+                    <th>產品成本</th>
+                    <th>產品存貨</th>
+                    <th>產品狀態</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in low %}
+                <tr>
+                    <td>{{ c.p_ID }}</td>
+                    <td>{{ c.p_name }}</td>
+                    <td>{{ c.p_price }}</td>
+                    <td>{{ c.p_cost }}</td>
+                    <td>{{ c.p_inventory }}</td>
+                    {% if c.p_inventory >= 100 %}
+                    <td>SAFE</td>
+                    {% else %}
+                    <td>WARNING</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </body>
+</html>

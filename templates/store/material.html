@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 原物料狀態 </title>
+        <meta charset='UTF-8'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <td>
+        <form name = "filt_id" action="/store/material" method="post" >
+        {% csrf_token %}
+        <select name = "filt_id">
+        {% for c in allproduct %}
+        {{ allproduct  }}
+        <option>{{ c.m_ID }}</option>
+        {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-warning">訂購原物料</button>
+        </form>
+        </td>
+        <div>
+            <h5> Material {{ theid }} EOQ:{{ C_EOQ }} </h5>
+            <h5> inventory: {{ products_in }} </h5>
+            <h5> new inventory: {{ new }} </h5>
+            <h5> 日平均需求: {{ d_demand }} </h5>
+            <h5> 再訂購點: {{ re_point }} </h5>
+
+        </div>
+        <table class='table' border="2px">
+        <thead>
+        <tr>
+                    <th>原物料ID</th>
+                    <th>原物料名稱</th>
+                    <th>原物料上次訂購日期</th>
+                    <th>原物料存貨</th>
+                    <th>原物料價格</th>
+                    <th>原物料存貨</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in low %}
+                <tr>
+
+                    <td>{{ c.m_ID }}</td>
+                    <td>{{ c.m_name }}</td>
+                    <td>{{ c.m_date }}</td>
+                    <td>{{ c.m_amount }}</td>
+                    <td>{{ c.m_price }}</td>
+                    <td>{{ c.m_amount }}</td>
+                    {% if c.m_amount >= 1000 %}
+                    <td>SAFE</td>
+                    {% else %}
+                    <td>WARNING</td>
+                    {% endif %}
+
+                </tr>
+                {% endfor %}
+            </tbody>
+
+    </body>
+</html>

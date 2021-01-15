@@ -1,0 +1,49 @@
+<!DOCTYPE html> <!品類需求佔有率>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Share of Category Requirement</title>
+      <style>
+        body {font-family: "sans-serif";}
+        button {font-family: "sans-serif"}
+      </style>
+
+  </head>
+  <body bgcolor= "#ffdcb9">
+    <div align="center">
+      <h2  style="text-align:center;font-size: large"> 品類需求佔有率 </h2>
+
+      <form action= '/charts/catchart' method='POST'>
+      {% csrf_token %}
+      <!--{{ form.as_p }}-->
+        <h4>產品名稱:</h4>
+        <div>
+          <input type="radio" id="z1" name="pp_name" value="1">
+          <label for="z1">純色腮紅</label>
+
+          <input type="radio" id="z2" name="pp_name" value="2">
+          <label for="z2">三色修容餅</label>
+
+          <input type="radio" id="z3" name="pp_name" value="3">
+          <label for="z3">柔焦無瑕粉餅</label>
+
+          <input type="radio" id="z4" name="pp_name" value="4">
+          <label for="z4">經典緞光唇膏</label>
+
+          <input type="radio" id="z5" name="pp_name" value="5">
+          <label for="z5">精萃水亮唇膏</label>
+        </div>
+        <div>
+        <h4>康是美其他品牌購買量 : <input type="number" id="aaa" name="a_amount"></h4>
+        <h4>寶雅其他品牌購買量 : <input type="number" id="bbb" name="b_amount"></h4>
+        <h4>屈臣氏其他品牌購買量 : <input input type="number" id="ccc" name="c_amount"></h4>
+        </div>
+        <button type='submit' style="text-align:center;width:120px;height:40px;font-size: 15px;background-color: #cd5c5c;color: #ffffff">計算</button>
+
+
+
+      </form>
+
+    </div>
+  </body>
+</html>

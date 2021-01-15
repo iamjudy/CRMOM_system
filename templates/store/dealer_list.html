@@ -1,0 +1,73 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Dealer List{% endblock title %}
+
+{% block breadcrumbs %}
+<div style="background-color:#ffdcb9" class="breadcrumbs">
+    <div style="background-color:#ffdcb9" class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div style="background-color:#ffdcb9" class="page-header float-left">
+                    <div style="background-color:#ffdcb9" class="page-title">
+                        <h1 style="background-color:#ffdcb9; color: #cd5c5c">Heme Database</h1>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:#ffdcb9" class="col-sm-8">
+                <div style="background-color:#ffdcb9" class="page-header float-right">
+                    <div style="background-color:#ffdcb9" class="page-title">
+                        <ol style="background-color:#ffdcb9" class="breadcrumb text-right">
+                            <li><a style="background-color:#ffdcb9; color: #cd5c5c" href="#">heme</a></li>
+                            <li><a style="background-color:#ffdcb9; color: #cd5c5c" href="#">Dealer</a></li>
+                            <li style="background-color:#ffdcb9; color: #cd5c5c" class="active">List</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock breadcrumbs %}
+
+{% block content %}
+<div style="background-color:#ffdcb9" class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div style="background-color:#ffdcb9" class="card-body">
+                <h4 style="background-color:#ffdcb9; color: #cd5c5c" class="box-title">Dealer List </h4>
+            </div>
+            <div style="background-color:#ffdcb9" class="card-body--">
+                <div style="background-color:#ffdcb9; color: #cd5c5c" class="table-stats order-table ov-h">
+                    <table style="background-color:#ffdcb9" class="table ">
+                        <thead>
+                            <tr>
+                                <th style="background-color:#ffdcb9; color: #cd5c5c" class="serial">#</th>
+                                <th style="background-color:#ffdcb9; color: #cd5c5c">d_ID</th>
+                                <th style="background-color:#ffdcb9; color: #cd5c5c">d_name</th>
+                                <th style="background-color:#ffdcb9; color: #cd5c5c">d_phone</th>
+                            </tr>
+                        </thead>
+                        <tbody style="background-color:#ffdcb9; color: #cd5c5c">
+                            {% if dealer %}
+                            {% for dealer in dealer %}
+                            <tr>
+                                <td style="background-color:#ffdcb9; color: #cd5c5c" class="serial">{{ forloop.counter }}</td>
+                                <td style="background-color:#ffdcb9; color: #cd5c5c">{{ dealer.d_ID }}</td>
+                                <td style="background-color:#ffdcb9; color: #cd5c5c">{{ dealer.d_name }}</td>
+                                <td style="background-color:#ffdcb9; color: #cd5c5c">{{ dealer.d_phone }}</td>
+                            </tr>
+                            {% endfor %}
+                            {% else %}
+                                <tr><td style="background-color:#ffdcb9; color: #cd5c5c">No Dealer Data</td></tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div> <!-- /.table-stats -->
+            </div>
+        </div> <!-- /.card -->
+    </div>  <!-- /.col-lg-8 -->
+</div>
+
+
+
+{% endblock content %}

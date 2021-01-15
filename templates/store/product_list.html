@@ -1,0 +1,82 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Product List{% endblock title %}
+
+{% block breadcrumbs %}
+<div style="background-color: #ffdcb9" class="breadcrumbs">
+    <div style="background-color: #ffdcb9" class="breadcrumbs-inner">
+        <div style="background-color: #ffdcb9" class="row m-0">
+            <div style="background-color: #ffdcb9" class="col-sm-4">
+                <div style="background-color: #ffdcb9" class="page-header float-left">
+                    <div style="background-color: #ffdcb9" class="page-title">
+                        <h1 style="color: #cd5c5c; background-color: #ffdcb9">Heme Database</h1>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color: #ffdcb9" class="col-sm-8">
+                <div style="background-color: #ffdcb9" class="page-header float-right">
+                    <div style="background-color: #ffdcb9" class="page-title">
+                        <ol style="background-color: #ffdcb9" class="breadcrumb text-right">
+                            <li><a style="color: #cd5c5c; background-color: #ffdcb9" href="#">Heme</a></li>
+                            <li><a style="color: #cd5c5c; background-color: #ffdcb9" href="#">Product</a></li>
+                            <li style="color: #cd5c5c; background-color: #ffdcb9" class="active">List</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock breadcrumbs %}
+
+{% block content %}
+<div style="background-color: #ffdcb9" class="row">
+    <div style="background-color: #ffdcb9" class="col-xl-12">
+        <div style="background-color: #ffdcb9" class="card">
+            <div style="background-color: #ffdcb9" class="card-body">
+                <h4 style="color: #cd5c5c; background-color: #ffdcb9" class="box-title">Product List </h4>
+            </div>
+            <div style="background-color: #ffdcb9" class="card-body--">
+                <div style="background-color: #ffdcb9" class="table-stats order-table ov-h">
+                    <table style="background-color: #ffdcb9" class="table ">
+                        <thead>
+                            <tr style="color: #cd5c5c; background-color: #ffdcb9">
+                                <th style="color: #cd5c5c; background-color: #ffdcb9" class="serial">#</th>
+                                <th style="color: #cd5c5c; background-color: #ffdcb9">p_ID</th>
+                                <th style="color: #cd5c5c; background-color: #ffdcb9">p_name</th>
+                                <th style="color: #cd5c5c; background-color: #ffdcb9">p_price</th>
+                                <th style="color: #cd5c5c; background-color: #ffdcb9">p_inventory</th>
+                                <th style="color: #cd5c5c; background-color: #ffdcb9">p_cost</th>
+                                <th style="color: #cd5c5c; background-color: #ffdcb9">p_hcost</th>
+                                <th style="color: #cd5c5c; background-color: #ffdcb9">p_estsupply</th>
+                                <th style="color: #cd5c5c; background-color: #ffdcb9">p_estdemand</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if product %}
+                            {% for product in product %}
+                            <tr style="color: #cd5c5c; background-color: #ffdcb9">
+                                <td class="serial">{{ forloop.counter }}</td>
+                                <td>{{ product.p_ID }}</td>
+                                <td>{{ product.p_name }}</td>
+                                <td>{{ product.p_price }}</td>
+                                <td>{{ product.p_inventory }}</td>
+                                <td>{{ product.p_cost }}</td>
+                                <td>{{ product.p_hcost }}</td>
+                                <td>{{ product.p_estsupply }}</td>
+                                <td>{{ product.p_estdemand }}</td>
+                            </tr>
+                            {% endfor %}
+                            {% else %}
+                                <tr><td style="color: #cd5c5c; background-color: #ffdcb9" >No Product Data</td></tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div> <!-- /.table-stats -->
+            </div>
+        </div> <!-- /.card -->
+    </div>  <!-- /.col-lg-8 -->
+
+    
+</div>
+{% endblock content %}
