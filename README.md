@@ -4,4 +4,7 @@
 
 個案公司：Heme
 
-![image](https://github.com/iamjudy/CRMOM_system/blob/main/螢幕快照%202021-01-21%20上午12.05.45.png)
+![image](https://github.com/iamjudy/CRMOM_system/blob/main/templates/CD.png)
+
+![image](https://github.com/iamjudy/CRMOM_system/blob/main/templates/.png)
+
